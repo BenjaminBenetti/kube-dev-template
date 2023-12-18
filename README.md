@@ -1,6 +1,6 @@
 # kube-dev-template
 
-If your anything like me, you've spent a lot of time setting up development environments for various projects.
+If you're anything like me, you've spent a lot of time setting up development environments for various projects.
 You, of course, want to develop inside Kubernetes, overcomplicating things, just like me. :sweat_smile:
 I've finally setup a the same scripts/helm/skaffold files one to many times. So I've made this template which should get you up and running 
 quickly :racehorse:. I think you can be up and running in `10 - 20` minutes with this template. 
