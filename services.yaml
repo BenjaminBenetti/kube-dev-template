@@ -1,0 +1,15 @@
+services:
+  # EXAMPLE. delete this once you have your own services
+  - name: example
+    image: httpd
+    net:
+      external: true
+      host: example.dev-template.com
+      internalPort: 80
+    resources:
+      limits:
+        cpu: 100m
+        memory: 128Mi
+      requests:
+        cpu: 10m
+        memory: 64Mi

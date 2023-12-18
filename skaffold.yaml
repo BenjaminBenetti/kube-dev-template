@@ -1,0 +1,21 @@
+apiVersion: skaffold/v3
+kind: Config
+
+build:
+  artifacts:
+    []
+    # add your docker files here.
+    # Example
+    # - image: example
+    #   context: ./docker/build/context
+    #   docker:
+    #     dockerfile: Dockerfile
+deploy:
+  helm:
+    releases:
+      - name: "{{ .PROJECT_NAME }}"
+        chartPath: ./helm
+        namespace: "{{ .PROJECT_NAME }}-dev"
+        createNamespace: true
+        valuesFiles:
+          - ./services.yaml
