@@ -1,25 +1,32 @@
 # kube-dev-template
-Template for a Kubernetes project. Including local k8s dev setup as well as prod deployment manifests. 
+
+If your anything like me, you've spent a lot of time setting up development environments for various projects.
+Mostly because you want an overcomplicated kubernetes based setup, just like me. :sweat_smile:
+I've finally setup a project one to many times. So I've made this template which should get you up and running 
+quickly :racehorse:. I think you can be un and running in 10 - 20 minutes with this template. 
+
+This is a template for a Kubernetes native project. Including local k8s dev setup as well as prod deployment manifests. 
 This project let's you quickly bootstrap your kubernetes development environment! :rocket: 
 
 ## Prerequisites
+- [Linux] - only compatible with Linux... May work with [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) but I haven't tested it because Windows is gross. :poop:
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)  
 - [kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
 - [helm](https://helm.sh/docs/intro/install/)
 - [skaffold](https://skaffold.dev/docs/install/)
-
+- [mkcert](https://github.com/FiloSottile/mkcert)
 
 ## Setup
 
 Once you've installed the prerequisites, edit the following files to configure your project:
 1. `project.json` - This file contains general information about your project. For example, the name of your project.
-2. `services.yaml` - This file contains the project specific list of services (microservices) that make up your project. This file defines how to deploy your project to kubernetes. Following the provided example in that file add your own services.
-3. `skaffold.yaml` - Add any project specific images (dockerfiles) to the artifacts list. 
+2. `helm/services.yaml` - This file contains the project specific list of services (microservices) that make up your project. This file defines how to deploy your project to kubernetes. Following the provided example in that file add your own services.
+3. `skaffold.yaml` - Add build definitions for project specific images (dockerfiles) to the artifacts list. 
 
 ## Usage
 
 Run your app locally in dev mode with the following command. :rocket:
 
 ```bash 
-./dev.sh 
+./dev.sh [--auto-clean]
 ```
